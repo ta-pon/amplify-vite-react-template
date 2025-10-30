@@ -5,10 +5,15 @@ import "./index.css";
 import { Amplify } from "aws-amplify";
 import outputs from "../amplify_outputs.json";
 
+import { Authenticator } from "@aws-amplify/ui-react"; // 追加
+import "@aws-amplify/ui-react/styles.css"; // 追加
+
 Amplify.configure(outputs);
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <App />
+    <Authenticator>
+      <App />
+    </Authenticator>
   </React.StrictMode>
 );
